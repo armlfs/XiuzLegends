@@ -2,7 +2,7 @@
 
 trap 'pkill -P $$' SIGINT SIGTERM
 
-export CLASSPATH='.:dist/XiuzSource.jar:dist/mina-core.jar:dist/slf4j-api.jar:dist/slf4j-jdk14.jar:dist/mysql-connector-java-bin.jar'
+export CLASSPATH='.:dist/XiuzLegends.jar:dist/mina-core.jar:dist/slf4j-api.jar:dist/slf4j-jdk14.jar:dist/mysql-connector-java-bin.jar'
 
 read -r -d '' PARAMS <<'EOF'
 -Dnet.sf.odinms.recvops=recvops.properties
