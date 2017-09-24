@@ -22,9 +22,6 @@
 -- Create schema XiuzSource
 --
 
-CREATE DATABASE IF NOT EXISTS XiuzSource;
-USE XiuzSource;
-
 --
 -- Temporary table structure for view `readable_cheatlog`
 --
