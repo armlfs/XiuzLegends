@@ -1,0 +1,22 @@
+* Install
+Create db
+#+BEGIN_SRC sql :engine mysql
+CREATE DATABASE `xiuzlegends` DEFAULT CHARACTER SET utf8;
+#+END_SRC
+
+Import db
+#+BEGIN_SRC shell
+mysql xiuzlegends < ./SQL/XiuzSource.sql
+#+END_SRC
+
+Create account
+#+BEGIN_SRC sql :engine mysql
+USE `xiuzlegends`;
+INSERT INTO `accounts`(name, password) VALUE('xinyifly', 'XiuzLegends');
+#+END_SRC
+
+Configure mysql
+#+BEGIN_SRC conf
+[mysqld]
+lower_case_table_names  = 1
+#+END_SRC
