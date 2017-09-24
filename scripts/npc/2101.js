@@ -16,7 +16,7 @@ function action(mode, type, selection) {
         if (status == 1)
             cm.sendNext("Then, I will send you out from here. Good job.");
         else if (status == 2) {
-            cm.warp(100000000, 0); //cm.warp(40000, 0);
+            cm.warp(3, 0);
             cm.dispose();
         }
     }
