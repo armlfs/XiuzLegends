@@ -1939,10 +1939,17 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject implements In
             return;
         }
         if (getLevel() < levelCap) {
+            double rate = Math.pow(1.6, getLevel() / 10);
+            if (inChat) {
+                rate *= 4;
+            }
+            long longGain = (long) (gain * rate);
+            gain = longGain > (long) Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) longGain;
+
             if ((long) this.exp.get() + (long) gain > (long) Integer.MAX_VALUE) {
                 int gainFirst = ExpTable.getExpNeededForLevel(level) - this.exp.get();
                 gain -= gainFirst + 1;
-                this.gainExp(gainFirst + 1, false, inChat, white);
+                this.gainExp((int) ((gainFirst + 1) / rate), false, inChat, white);
             }
             updateSingleStat(MapleStat.EXP, this.exp.addAndGet(gain));
         } else {
