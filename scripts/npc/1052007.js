@@ -38,6 +38,9 @@ var menu;
 var sw;
 
 function start() {
+	cm.warp(600010001);
+	cm.dispose();
+	return;
 	status = -1;
 	sw = cm.getEventManager("Subway");
 	action(1, 0, 0);

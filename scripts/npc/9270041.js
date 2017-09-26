@@ -34,6 +34,9 @@ var cost = 20000;
 var ap;
 
 function start() {
+	cm.warp(540010000);
+	cm.dispose();
+	return;
 	ap = cm.getEventManager("AirPlane");
 	status = -1;
 	action(1, 0, 0);

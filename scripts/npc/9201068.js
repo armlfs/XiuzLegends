@@ -38,6 +38,9 @@ importPackage(net.sf.odinms.client);
 var sw;
 
 function start() {
+	cm.warp(103000100);
+	cm.dispose();
+	return;
 	status = -1;
 	sw = cm.getEventManager("Subway");
 	action(1, 0, 0);
