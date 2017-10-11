@@ -2422,8 +2422,8 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject implements In
     }
 
     public void levelUp() {
-        ISkill improvingMaxHP = null;
-        int improvingMaxHPLevel = 0;
+        ISkill improvingMaxHP = SkillFactory.getSkill(1000001);
+        int improvingMaxHPLevel = getSkillLevel(improvingMaxHP);
         ISkill improvingMaxMP = SkillFactory.getSkill(2000001);
         int improvingMaxMPLevel = getSkillLevel(improvingMaxMP);
         remainingAp += 5;
@@ -2431,8 +2431,6 @@ public class MapleCharacter extends AbstractAnimatedMapleMapObject implements In
             maxhp += rand(12, 16);
             maxmp += rand(10, 12);
         } else if (job.isA(MapleJob.WARRIOR)) {
-            improvingMaxHP = SkillFactory.getSkill(1000001);
-            improvingMaxHPLevel = getSkillLevel(improvingMaxHP);
             maxhp += rand(24, 28);
             maxmp += rand(4, 6);
         } else if (job.isA(MapleJob.MAGICIAN)) {
